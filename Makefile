@@ -1,5 +1,5 @@
 BUILD=build
-OBJECTS=./build/cprocess.o ./build/compiler.o
+OBJECTS=./build/cprocess.o ./build/compiler.o ./build/buffer.o ./build/vector.o
 INCLUDES= -I./
 all: $(OBJECTS)
 	gcc main.c $(INCLUDES) $(OBJECTS) -g -o ./main
@@ -9,6 +9,12 @@ all: $(OBJECTS)
 
 ./build/cprocess.o: cprocess.c
 	gcc ./cprocess.c $(INCLUDES) -o ./build/cprocess.o -g -c
+
+./build/buffer.o: ./helpers/buffer.c
+	gcc ./helpers/buffer.c $(INCLUDES) -o ./build/buffer.o -g -c
+
+./build/vector.o: ./helpers/vector.c
+	gcc ./helpers/vector.c $(INCLUDES) -o ./build/vector.o -g -c
 
 clean:
 	rm ./main
