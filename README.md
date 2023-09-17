@@ -9,6 +9,18 @@ What I am interested in:
 
 2023-09-17:
 
-Purchase a class on Udemy platform,
+Purchased a class on Udemy platform,
 
 - <https://www.udemy.com/course/creating-a-c-compiler-from-scratch-module-1/learn/lecture/33832084#overview>
+
+## Session 1 Course Overview
+
+### Introduction
+
+A lexer takes C source files as input, it will create token outputs. Then it being passed into a parser.
+
+In Module 1, will learn lexer and parser.
+
+```bash
+sudo apt install gdb gcc make
+```

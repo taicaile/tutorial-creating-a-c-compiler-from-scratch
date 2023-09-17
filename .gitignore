@@ -1,0 +1,8 @@
+# debug info
+main.dSYM
+# objects
+*.o
+# binary
+main
+# build
+build
