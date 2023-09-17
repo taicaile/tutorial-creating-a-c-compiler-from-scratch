@@ -1,23 +1,22 @@
 #include <stdio.h>
 #include "helpers/vector.h"
+#include "compiler.h"
 
 int main(int argc, char const *argv[])
 {
-    int x = 100;
-    struct vector *vec = vector_create(sizeof(int));
-    vector_push(vec, &x);
-    x = 90;
-    vector_push(vec, &x);
-
-    vector_set_peek_pointer(vec, 0);
-    int *ptr = vector_peek(vec);
-
-    while (ptr)
+    int res = compile_file("./test.c", "./test", 0);
+    if (res==COMPILER_FILE_COMPILED_OK)
     {
-        printf("%i\n", *ptr);
-        ptr = vector_peek(vec);
+        printf("Everything compiled fine\n");
+    }
+    else if (res==COMPILER_FAILED_WITH_ERRORS)
+    {
+        printf("Compiled failed\n");
+    }
+    else
+    {
+        printf("Unknown response for compile file.\n");
     }
 
-    printf("Hello World!\n");
     return 0;
 }
